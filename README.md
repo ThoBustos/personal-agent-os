@@ -6,20 +6,75 @@ A **Life Operating System** for humans who want to live intentionally, build at 
 
 ## Quick Start with Claude Code
 
-```bash
-# 1. Fork and clone this repo
-git clone https://github.com/yourusername/personal-agent-os.git
-cd personal-agent-os
+### Prerequisites
 
-# 2. Run Claude Code
-claude
+- **Git** - For version control
+- **Claude Code** - Anthropic's CLI (`npm install -g @anthropic-ai/claude-code`)
+- **Obsidian** (recommended) - For viewing/editing your vault
+- **GitHub account** - For forking the repo
+- **Google account** (optional) - For Gmail, Calendar, Drive integration
 
-# 3. Say the magic words
+### Setup
+
+1. **Fork this repo** on GitHub (click "Fork" button top-right)
+
+2. **Clone your fork**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/personal-agent-os.git
+   cd personal-agent-os
+   ```
+
+3. **Run Claude Code**
+   ```bash
+   claude
+   ```
+
+4. **Say the magic words**
+   > "Let's do it"
+
+   Claude guides you through ~15 minute onboarding:
+   - Asks about your vision, pillars, and projects
+   - Creates your vault at `../my-vault/` (sibling folder)
+   - Offers to set up Google integration
+
+5. **Open your vault** in Obsidian
+
+### Google Integration (Recommended)
+
+Connect Gmail, Calendar, and Drive to Claude for full functionality:
+
+1. Create your own Google Cloud OAuth app ([10-min guide](docs/mcp/google-workspace.md#quick-setup-checklist))
+2. Add the MCP server to Claude Code
+3. Authenticate your Google account(s)
+
+**Note:** You create your *own* OAuth app - no access to anyone else's app needed. Your credentials stay on your machine.
+
+See [Google Workspace Setup](docs/mcp/google-workspace.md) for detailed instructions.
+
+---
+
+## Architecture
+
+This repo (`personal-agent-os/`) is the **framework** - templates, skills, docs.
+
+Your vault (`my-vault/`) is created as a **sibling folder** during onboarding:
+
+```
+your-projects/
+├── personal-agent-os/   # Framework (this repo, public)
+│   ├── .claude/skills/  # Skill definitions
+│   ├── templates/       # Markdown templates
+│   └── docs/            # Documentation
+└── my-vault/            # YOUR vault (private, created during onboarding)
+    ├── 00_SYSTEM/       # Vision, pillars, state
+    ├── 02_JOURNAL/      # Weekly/monthly reflections
+    └── 03_PROJECTS/     # Your active projects
 ```
 
-> **"Let's do it"**
-
-Claude will guide you through a 15-minute onboarding that creates your personalized vault, asks about your vision and projects, and sets up your first week.
+**Benefits:**
+- Pull framework updates without affecting your vault
+- Your vault is a separate Git repo (push to private repo)
+- Keep personal data separate from public code
 
 ---
 

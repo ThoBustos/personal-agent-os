@@ -124,12 +124,20 @@ These phrases invoke `/onboarding`:
 
 ### Integration Resolution (for MCP tools)
 
-When using MCP tools that require account credentials:
-1. If in project context → check project's `_STATE.md` Integrations section
-2. If not specified or no project → fall back to `GLOBAL_STATE.md` Default Integrations
-3. Never ask for accounts that are configured
+When using MCP tools that require Google account selection:
 
-**Resolution order:** Project _STATE.md → GLOBAL_STATE.md → Ask user
+1. **Check project context** - If working on a specific project, read its `_STATE.md` Integrations section
+2. **Apply context rules** - Use GLOBAL_STATE.md "Account Selection Rules" for domain-specific logic
+3. **Fall back to default** - Use GLOBAL_STATE.md primary account if no override exists
+4. **Never ask** if configured - Only ask when account is genuinely ambiguous
+
+**Resolution order:** Project _STATE.md → Context Rules → Global Default → Ask user
+
+**Examples:**
+- "Check podcast Drive folder" → use account configured for podcast/LTAI
+- "Email a podcast guest" → use account configured for external comms
+- "Send work email" → use work account from project _STATE.md
+- "Read calendar for this week" → use default account
 
 ---
 
