@@ -1,0 +1,5 @@
+# Ignore all files except examples and documentation
+*
+!.gitignore
+!README.md
+!*.example.json
