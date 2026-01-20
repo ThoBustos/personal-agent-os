@@ -85,10 +85,13 @@ next_review: {{YYYY-MM-DD + 1 week}}
 
 *Override default accounts for this project. Leave empty to use defaults from GLOBAL_STATE.md*
 
-| Service | Account | Notes |
-|---------|---------|-------|
-| Google Workspace | | Calendar, Drive, Gmail |
-| GitHub | | |
+| Service | Account | Purpose |
+|---------|---------|---------|
+| Gmail | | Project communications |
+| Google Drive | | Project files, shared folders |
+| Google Calendar | | Project meetings |
+| GitHub | | Repository access |
+| Google Chat | | Team workspace |
 | Slack | | |
 
 ---

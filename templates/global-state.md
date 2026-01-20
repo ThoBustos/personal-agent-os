@@ -59,10 +59,20 @@ next_review: {{YYYY-MM-DD + 3 days}}
 
 *Default accounts used when no project-specific override exists*
 
-| Service | Account | Notes |
-|---------|---------|-------|
-| Google Workspace | {{primary-email}} | Personal/default account |
-| GitHub | {{username}} | |
+| Service | Account | Context | Notes |
+|---------|---------|---------|-------|
+| Google (Primary) | {{email}} | Default for all Google services | |
+| Google (Personal) | {{email}} | Personal emails, non-work | Optional |
+| Google (Work/Other) | {{email}} | Specific workspace | Optional |
+| GitHub | {{username}} | | |
+
+### Account Selection Rules
+
+*Define context-based rules for automatic account selection*
+
+- **Project context** → Use project's `_STATE.md` integration if specified
+- **Domain-based** → Example: "LTAI content" uses LTAI account
+- **Default/unspecified** → Primary account
 
 ---
 

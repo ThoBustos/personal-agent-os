@@ -2,6 +2,26 @@
 
 Connect Google Drive, Calendar, Gmail, Docs, Sheets, and more to Claude Code.
 
+## Quick Setup Checklist
+
+**Time: ~10 minutes**
+
+- [ ] Create Google Cloud project at [console.cloud.google.com](https://console.cloud.google.com/)
+- [ ] Enable APIs: Gmail, Calendar, Drive, Docs
+- [ ] Configure OAuth consent screen (External, add yourself as test user)
+- [ ] Create OAuth credentials (Desktop app)
+- [ ] Download credentials JSON to `~/.config/personal-agent-os/google/credentials.json`
+- [ ] Add MCP server:
+  ```bash
+  claude mcp add google-workspace -- uvx workspace-mcp
+  ```
+- [ ] Restart Claude Code
+- [ ] Say "Add my Google account you@email.com"
+
+**Important:** You create your **own** OAuth app. No access to anyone else's app needed. Each fork user is fully independent - your credentials and tokens stay on your machine (`~/.google-mcp-accounts/`).
+
+---
+
 ## Quick Start
 
 If you just want to get started quickly:
