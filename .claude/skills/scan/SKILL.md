@@ -37,21 +37,23 @@ Read these files without outputting anything:
 **System Core:**
 1. `../my-vault/00_SYSTEM/GLOBAL_STATE.md`
 2. `../my-vault/00_SYSTEM/LIFE_VISION.md`
+3. `../my-vault/00_SYSTEM/IMPORTANT_DATES.md` (if exists)
 
 **Goals Cascade:**
-3. `../my-vault/01_GOALS/Life.md` (if exists)
-4. `../my-vault/01_GOALS/{{YYYY}}.md` (current year goals)
-5. `../my-vault/02_JOURNAL/Monthly/{{YYYY}}-{{MM}}.md` (current month)
-6. `../my-vault/02_JOURNAL/Weekly/{{YYYY}}-W{{WW}}.md` (current week)
+4. `../my-vault/01_GOALS/Life.md` (if exists)
+5. `../my-vault/01_GOALS/{{YYYY}}.md` (current year goals)
+6. `../my-vault/02_JOURNAL/Monthly/{{YYYY}}-{{MM}}.md` (current month)
+7. `../my-vault/02_JOURNAL/Weekly/{{YYYY}}-W{{WW}}.md` (current week)
 
 **Projects:**
-7. All active project `_STATE.md` files from GLOBAL_STATE's `active_projects` list
+8. All active project `_STATE.md` files from GLOBAL_STATE's `active_projects` list
 
 Calculate:
 - Days since GLOBAL_STATE last updated
 - Days since each project _STATE last updated
 - Whether current week/month journals exist
 - Whether year goals file exists
+- Any important dates coming up this week (from IMPORTANT_DATES.md)
 
 ### Phase 2: Cascade Quick Check
 
@@ -83,6 +85,10 @@ Flag anything stale:
 - Missing current week journal: "No week journal exists for W{{WW}}"
 - Missing current month: "No month plan exists for {{YYYY}}-{{MM}}"
 - Missing year goals: "No year goals exist for {{YYYY}}"
+
+Surface upcoming important dates:
+- Check IMPORTANT_DATES.md for any dates within the next 7 days
+- Flag: "{{Date name}} coming up on {{date}}" (e.g., "Monthly anniversary with Princess on the 20th")
 
 ### Phase 4: Attention vs Intention
 
@@ -182,6 +188,7 @@ Read all of these without outputting:
 - `../my-vault/00_SYSTEM/GLOBAL_STATE.md`
 - `../my-vault/00_SYSTEM/LIFE_VISION.md`
 - `../my-vault/00_SYSTEM/PILLARS.md`
+- `../my-vault/00_SYSTEM/IMPORTANT_DATES.md` (if exists)
 
 **Goals Cascade:**
 - `../my-vault/01_GOALS/Life.md` (if exists)
