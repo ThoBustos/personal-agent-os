@@ -60,4 +60,16 @@
 
 ---
 
+## Integrations
+
+*Override default accounts for this project. Leave empty to use defaults from GLOBAL_STATE.md*
+
+| Service | Account | Notes |
+|---------|---------|-------|
+| Google Workspace | | Calendar, Drive, Gmail |
+| GitHub | | |
+| Slack | | |
+
+---
+
 #project/example #active

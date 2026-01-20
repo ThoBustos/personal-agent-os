@@ -47,6 +47,19 @@
 - **Social:** {{When}}
 - **Reflective:** {{When}}
 
+---
+
+## Default Integrations
+
+*Default accounts used when no project-specific override exists*
+
+| Service | Account | Notes |
+|---------|---------|-------|
+| Google Workspace | {{primary-email}} | Personal/default account |
+| GitHub | {{username}} | |
+
+---
+
 ## Notes
 
 {{Any other relevant context}}
