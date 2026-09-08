@@ -364,9 +364,20 @@ Based on yesterday's journal entry (and meeting context from Step 0.1, if any):
 
 ---
 
-**2.3. DAILY FEEDBACK SUMMARY (Synthesized)** *(Skip in quick mode)*
+**2.3. DAILY FEEDBACK SUMMARY (Synthesized)** *(Skip in quick mode — but do NOT skip just because the session is moving fast in full mode. This step is mandatory whenever Step 0.1 found transcripts.)*
 
-After the reflection above, present a short 3-line synthesis. Don't ask a question, just show it:
+First, show the calls recap pulled directly from Step 0.1's scan of the found date (title + attendees, already read into frontmatter — no extra fetching needed):
+
+```
+📞 **Yesterday's Calls:** {{N}} calls
+1. {{Meeting title}} — {{attendee names, or "no attendees logged" if frontmatter list is empty}}
+2. {{Meeting title}} — {{attendee names}}
+...
+```
+
+**If attendees frontmatter is empty:** say so plainly ("no attendees logged") rather than guessing names from the transcript body. Do not skip a meeting from the count just because attendees are missing.
+
+Then present a short 3-line synthesis. Don't ask a question, just show it:
 
 ```
 📊 **Yesterday in 3 lines:**
@@ -380,7 +391,7 @@ After the reflection above, present a short 3-line synthesis. Don't ask a questi
 - For "Missed opportunity," cross-reference `01_GOALS/{{year}}.md` and `00_SYSTEM/PILLARS.md` to find one goal or pillar area that didn't get attention yesterday
 - Keep each line one sentence, no filler
 - This is Claude's synthesis, not a question. The user can react but isn't required to respond
-- **Save it:** this summary gets written into today's weekly journal entry under a `**Feedback**` section (see Step 5) so it isn't lost after the session ends
+- **Save it:** both the calls recap and the 3-line synthesis get written into today's weekly journal entry under a `**Feedback**` section (see Step 5) so it isn't lost after the session ends
 
 ---
 
@@ -632,6 +643,12 @@ For each category, identify what needs to be updated:
 - Add new tasks mentioned
 - Update `last_reviewed` timestamp
 
+**⚠️ Carry-forward rule (never silently drop items):** If TODO.md's "This Week" section needs refreshing to a new week number or synced against a project's current state, this is a MERGE, not a regenerate-from-source. Regenerating from a single source (e.g. a project `_STATE.md`'s "this week" execution list) silently deletes anything that source doesn't happen to mention — including OKR/quarterly backlog items and personal rolling tasks that are still open but just not "this week." Every previously unchecked `- [ ]` item must do one of:
+  1. Carry forward as-is (still open, not on this week's critical path)
+  2. Get marked `[x]` complete (only if the user confirms it's actually done)
+  3. Get explicitly flagged to the user as possibly stale/dropped, with their confirmation before removing it
+- Show a short diff-style note ("carrying forward: X, Y — dropping: Z because [reason]") before writing, not just the final section. When in doubt, keep the item.
+
 **5. System State** (GLOBAL_STATE.md)
 - Strategic decisions or priority shifts
 - Energy patterns worth noting
@@ -740,6 +757,7 @@ Write all categorized updates:
 - Mark [x] for completed tasks
 - Add new tasks
 - Update `last_reviewed` timestamp
+- If refreshing the "This Week" section to a new week, apply the carry-forward rule from Step 3 — merge against the existing file, never regenerate wholesale from a single project source
 
 **4. Project _STATE.md files** (for each project mentioned):
 - Update relevant sections (Current Focus, Blockers, Active Clients, etc.)
